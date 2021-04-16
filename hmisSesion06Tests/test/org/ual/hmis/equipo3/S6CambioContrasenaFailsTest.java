@@ -33,7 +33,7 @@ public class S6CambioContrasenaFailsTest {
   @Before
   public void setUp() {
 	// Browser selector
-	   int browser= 0; // 0: firefox, 1: chrome,...
+	   int browser= 1; // 0: firefox, 1: chrome,...
 	   boolean headless = false;
 
 	   switch (browser) {
@@ -121,7 +121,7 @@ public class S6CambioContrasenaFailsTest {
     // 15 | click | css=.button-text | 
     driver.findElement(By.cssSelector(".button-text")).click();
     // 16 | assertText | css=.col-sm-6:nth-child(1) .invalid-feedback | Please enter a password or choose "Cancel".
-    assertThat(driver.findElement(By.cssSelector(".col-sm-6:nth-child(1) .invalid-feedback")).getText(), is("Please enter a password or choose \\\"Cancel\\\"."));
+    assertThat(driver.findElement(By.cssSelector(".col-sm-6:nth-child(1) .invalid-feedback")).getText(), is("Please enter a password or choose \"Cancel\"."));
     // 17 | assertText | css=.col-sm-6:nth-child(2) .invalid-feedback | Your new password and confirmation do not match.
     assertThat(driver.findElement(By.cssSelector(".col-sm-6:nth-child(2) .invalid-feedback")).getText(), is("Your new password and confirmation do not match."));
     // 18 | type | id=password | ej1

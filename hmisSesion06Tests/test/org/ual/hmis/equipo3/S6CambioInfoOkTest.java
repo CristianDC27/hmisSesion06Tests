@@ -32,7 +32,7 @@ public class S6CambioInfoOkTest {
   @Before
   public void setUp() {
 	// Browser selector
-	   int browser= 0; // 0: firefox, 1: chrome,...
+	   int browser= 1; // 0: firefox, 1: chrome,...
 	   boolean headless = false;
 
 	   switch (browser) {
@@ -135,6 +135,10 @@ public class S6CambioInfoOkTest {
     driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1@ual.es");
     // 23 | click | css=.ajax-button | 
     driver.findElement(By.cssSelector(".ajax-button")).click();
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Edit profile")));
+      }
     // 24 | assertText | css=.row:nth-child(4) strong | ej1
     assertThat(driver.findElement(By.cssSelector(".row:nth-child(4) strong")).getText(), is("ej1"));
     // 25 | assertText | css=.row:nth-child(5) strong | ej1@ual.es
