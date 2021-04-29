@@ -32,7 +32,7 @@ public class S6CambioInfoFailsTest {
   @Before
   public void setUp() {
 	// Browser selector
-	   int browser= 1; // 0: firefox, 1: chrome,...
+	   int browser= 0; // 0: firefox, 1: chrome,...
 	   boolean headless = false;
 
 	   switch (browser) {
