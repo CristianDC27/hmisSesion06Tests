@@ -1,2 +1,0 @@
-module hmisSesion06Tests {
-}
