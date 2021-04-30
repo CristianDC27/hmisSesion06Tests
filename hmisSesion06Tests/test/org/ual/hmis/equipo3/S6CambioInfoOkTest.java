@@ -86,9 +86,9 @@ public class S6CambioInfoOkTest {
     // 4 | click | linkText=Log in | 
     driver.findElement(By.linkText("Log in")).click();
     // 5 | type | css=.form-group:nth-child(1) > .form-control | ej1@ual.es
-    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1@ual.es");
+    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("ej1@ual.es");
     // 6 | type | css=.form-group:nth-child(2) > .form-control | ej1
-    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("ej1");
     // 7 | click | css=.button-text | 
     driver.findElement(By.cssSelector(".button-text")).click();
     // 8 | waitForElementVisible | xpath=//div[@id='welcome']/div[2]/h1 | 30000
@@ -113,9 +113,11 @@ public class S6CambioInfoOkTest {
     // 13 | click | linkText=Edit profile | 
     driver.findElement(By.linkText("Edit profile")).click();
     // 14 | type | id=full-name | ej2
-    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej2");
+    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("full-name")).sendKeys("ej2");
     // 15 | type | id=email-address | ej2@ual.es
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej2@ual.es");
+    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("email-address")).sendKeys("ej2@ual.es");
     // 16 | click | css=.ajax-button | 
     driver.findElement(By.cssSelector(".ajax-button")).click();
     // 17 | waitForElementVisible | linkText=Edit profile | 30000
@@ -130,9 +132,11 @@ public class S6CambioInfoOkTest {
     // 20 | click | linkText=Edit profile | 
     driver.findElement(By.linkText("Edit profile")).click();
     // 21 | type | id=full-name | ej1
-    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("full-name")).sendKeys("ej1");
     // 22 | type | id=email-address | ej1@ual.es
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1@ual.es");
+    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("email-address")).sendKeys("ej1@ual.es");
     // 23 | click | css=.ajax-button | 
     driver.findElement(By.cssSelector(".ajax-button")).click();
     {

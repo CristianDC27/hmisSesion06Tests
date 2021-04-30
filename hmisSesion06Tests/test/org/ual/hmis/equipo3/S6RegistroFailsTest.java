@@ -29,10 +29,11 @@ public class S6RegistroFailsTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+  private int browser;
   @Before
   public void setUp() {
 	// Browser selector
-	   int browser=0; // 0: firefox, 1: chrome,...
+	   browser=0; // 0: firefox, 1: chrome,...
 	   boolean headless = false;
 
 	   switch (browser) {
@@ -96,27 +97,32 @@ public class S6RegistroFailsTest {
     // 9 | assertText | css=.form-group:nth-child(4) > .invalid-feedback | Your password and confirmation do not match.
     assertThat(driver.findElement(By.cssSelector(".form-group:nth-child(4) > .invalid-feedback")).getText(), is("Your password and confirmation do not match."));
     // 10 | type | id=full-name | ej1
-    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("full-name")).sendKeys("ej1");
     // 11 | type | id=email-address | ej1
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("email-address")).sendKeys("ej1");
     // 12 | type | id=password | ej1
-    driver.findElement(By.id("password")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("password")).sendKeys("ej1");
     // 13 | type | id=confirm-password | ej1
-    driver.findElement(By.id("confirm-password")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("confirm-password")).sendKeys("ej1");
     // 14 | click | css=.button-text | 
     driver.findElement(By.cssSelector(".button-text")).click();
     // 15 | executeScript | return document.getElementById("email-address").validationMessage | message
     vars.put("message", js.executeScript("return document.getElementById(\"email-address\").validationMessage"));
     // 16 | assert | message | Incluye un signo "@" en la dirección de correo electrónico. La dirección "ej1" no incluye el signo "@".
-    assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
+    if(browser==1)
+    	assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
+    else 
+    	assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
     // 17 | type | id=email-address | ej1@ual
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1@ual");
+    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("email-address")).sendKeys("ej1@ual");
     // 18 | click | css=.button-text | 
     driver.findElement(By.cssSelector(".button-text")).click();
     // 19 | assertText | css=.invalid-feedback | Please enter a valid email address.
     assertThat(driver.findElement(By.cssSelector(".invalid-feedback")).getText(), is("Please enter a valid email address."));
     // 20 | type | id=email-address | ej1@ual.es
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1@ual.es");
+    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("email-address")).sendKeys("ej1@ual.es");
     // 21 | click | css=.ajax-button | 
     driver.findElement(By.cssSelector(".ajax-button")).click();
     // 22 | assertNotChecked | id=terms-agreement | 
@@ -126,11 +132,19 @@ public class S6RegistroFailsTest {
     // 24 | click | css=.ajax-button | 
     driver.findElement(By.cssSelector(".ajax-button")).click();
     // 25 | waitForElementVisible | css=.text-danger | 30000
-    {
+    
+    if (browser==1){
       WebDriverWait wait = new WebDriverWait(driver, 30);
       wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".text-danger")));
     }
+    else {
+    	WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id=\'signup\']/div/div/form/div[6]/p")));
+    }
     // 26 | assertText | css=.text-danger | It looks like there's already an account with your email address. If you forgot your password, you can recover it here.
-    assertThat(driver.findElement(By.cssSelector(".text-danger")).getText(), is("It looks like there's already an account with your email address. If you forgot your password, you can recover it here."));
+    if(browser==1)
+    	assertThat(driver.findElement(By.cssSelector(".text-danger")).getText(), is("It looks like there's already an account with your email address. If you forgot your password, you can recover it here."));
+    else
+    	assertThat(driver.findElement(By.xpath("//div[@id=\'signup\']/div/div/form/div[6]/p")).getText(), is("It looks like there's already an account with your email address. If you forgot your password, you can recover it here."));
   }
 }

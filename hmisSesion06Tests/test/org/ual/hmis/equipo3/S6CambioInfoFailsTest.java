@@ -29,10 +29,11 @@ public class S6CambioInfoFailsTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+  private int browser;
   @Before
   public void setUp() {
 	// Browser selector
-	   int browser= 0; // 0: firefox, 1: chrome,...
+	   browser= 0; // 0: firefox, 1: chrome,...
 	   boolean headless = false;
 
 	   switch (browser) {
@@ -90,9 +91,9 @@ public class S6CambioInfoFailsTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".button-text")));
      }
     // 5 | type | css=.form-group:nth-child(1) > .form-control | ej1@ual.es
-    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1@ual.es");
+    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("ej1@ual.es");
     // 6 | type | css=.form-group:nth-child(2) > .form-control | ej1
-    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("ej1");
     // 7 | click | css=.button-text | 
     driver.findElement(By.cssSelector(".button-text")).click();
     // 8 | waitForElementVisible | xpath=//div[@id='welcome']/div[2]/h1 | 30000
@@ -116,22 +117,37 @@ public class S6CambioInfoFailsTest {
     }
     // 13 | click | linkText=Edit profile | 
     driver.findElement(By.linkText("Edit profile")).click();
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".button-text")));
+      }
     // 14 | type | id=full-name | ej1
-    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("full-name")).sendKeys("ej1");
     // 15 | type | id=email-address | ej1
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("email-address")).sendKeys("ej1");
+    
+    driver.findElement(By.cssSelector(".button-text")).click();
     // 16 | executeScript | return document.getElementById("email-address").validationMessage | message
     vars.put("message", js.executeScript("return document.getElementById(\"email-address\").validationMessage"));
     // 17 | assert | message | Incluye un signo "@" en la dirección de correo electrónico. La dirección "ej1" no incluye el signo "@".
-    assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
+    if(browser==1)
+    	assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
+    else 
+    	assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
     // 18 | type | id=email-address | ej1@
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1@");
+    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    driver.findElement(By.id("email-address")).sendKeys("ej1@");
     // 19 | click | css=.button-text | 
     driver.findElement(By.cssSelector(".button-text")).click();
     // 20 | executeScript | return document.getElementById("email-address").validationMessage | message
     vars.put("message", js.executeScript("return document.getElementById(\"email-address\").validationMessage"));
     // 21 | assert | message | Introduce texto detrás del signo "@". La dirección "ej1@" está incompleta.
-    assertEquals(vars.get("message").toString(), "Introduce texto detrás del signo \"@\". La dirección \"ej1@\" está incompleta.");
+    if(browser==1)
+    	assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
+    else 
+    	assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
     // 22 | click | id=header-account-menu-link | 
     driver.findElement(By.id("header-account-menu-link")).click();
     // 23 | waitForElementVisible | linkText=Sign out | 30000

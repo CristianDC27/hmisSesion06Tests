@@ -89,15 +89,15 @@ public class S6RegistroOkTest {
     // 5 | executeScript | return "ual-" + Math.floor(Math.random()*1500000)+"@ual.es" | emailrandom
     vars.put("emailrandom", js.executeScript("return \"ual-\" + Math.floor(Math.random()*1500000)+\"@ual.es\""));
     // 6 | type | id=full-name | ej1
-    driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("full-name")).sendKeys("ej1");
     // 7 | type | id=email-address | ${emailrandom}
-    driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"),vars.get("emailrandom").toString());
+    driver.findElement(By.id("email-address")).sendKeys(vars.get("emailrandom").toString());
     // 8 | type | id=password | ej1
-    driver.findElement(By.id("password")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
-    // 9 | type | id=password | ej1
-    driver.findElement(By.id("password")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("password")).sendKeys("ej1");
+//    // 9 | type | id=password | ej1
+//    driver.findElement(By.id("password")).sendKeys("ej1");
     // 10 | type | id=confirm-password | ej1
-    driver.findElement(By.id("confirm-password")).sendKeys(Keys.chord(Keys.CONTROL, "a"),"ej1");
+    driver.findElement(By.id("confirm-password")).sendKeys("ej1");
     // 11 | click | id=terms-agreement | 
     driver.findElement(By.id("terms-agreement")).click();
     // 12 | click | css=.ajax-button | 
