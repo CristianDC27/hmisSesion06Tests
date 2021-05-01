@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -42,6 +43,9 @@ public class S6LogInFailsTest {
 		   // Descomprimir el archivo geckodriver.exe en la carpeta drivers
 //		   System.setProperty("webdriver.gecko.driver",  "drivers/geckodriver.exe");
 		   FirefoxOptions firefoxOptions = new FirefoxOptions();
+		   FirefoxProfile firefoxProfile = new FirefoxProfile();
+		   firefoxProfile.setPreference("intl.accept_languages", "es");
+		   firefoxOptions.setProfile(firefoxProfile);
 		   if (headless) firefoxOptions.setHeadless(headless);
 		   driver = new FirefoxDriver(firefoxOptions);
 
@@ -53,6 +57,7 @@ public class S6LogInFailsTest {
 
 //		   System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		   ChromeOptions chromeOptions = new ChromeOptions();
+		   chromeOptions.addArguments("--lang= es");
 		   if (headless) chromeOptions.setHeadless(headless);
 		   chromeOptions.addArguments("window-size=1920,1080");
 		   driver = new ChromeDriver(chromeOptions);
