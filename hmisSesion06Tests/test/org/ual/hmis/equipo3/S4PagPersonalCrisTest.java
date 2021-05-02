@@ -45,7 +45,7 @@ public class S4PagPersonalCrisTest {
 //		   System.setProperty("webdriver.gecko.driver",  "drivers/geckodriver.exe");
 		   FirefoxOptions firefoxOptions = new FirefoxOptions();
 		   FirefoxProfile firefoxProfile = new FirefoxProfile();
-		   firefoxProfile.setPreference("intl.accept_languages", "es");
+		   firefoxProfile.setPreference("intl.accept_languages", "es-ES");
 		   firefoxOptions.setProfile(firefoxProfile);
 		   if (headless) firefoxOptions.setHeadless(headless);
 		   driver = new FirefoxDriver(firefoxOptions);
