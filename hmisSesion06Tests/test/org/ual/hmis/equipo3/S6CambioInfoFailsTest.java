@@ -141,10 +141,11 @@ public class S6CambioInfoFailsTest {
     if(browser==1)
     	assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
     else {
-    	  if ((Boolean) js.executeScript("return (arguments[0].includes(\'es\'))", vars.get("navigatorLanguage"))) 
-    		  assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
-    	  else
-    		  assertEquals(vars.get("message").toString(), "Please enter an email address.");
+    	assertEquals(vars.get("message").toString(), "Please enter an email address.");
+//    	  if ((Boolean) js.executeScript("return (arguments[0].includes(\'es\'))", vars.get("navigatorLanguage"))) 
+//    		  assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
+//    	  else
+//    		  assertEquals(vars.get("message").toString(), "Please enter an email address.");
     }
     // 18 | type | id=email-address | ej1@
     driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
@@ -157,10 +158,11 @@ public class S6CambioInfoFailsTest {
     if(browser==1)
     	assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
     else {
-    	  if ((Boolean) js.executeScript("return (arguments[0].includes(\'es\'))", vars.get("navigatorLanguage"))) 
-    		  assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
-    	  else
-    		  assertEquals(vars.get("message").toString(), "Please enter an email address.");
+    	assertEquals(vars.get("message").toString(), "Please enter an email address.");
+//    	  if ((Boolean) js.executeScript("return (arguments[0].includes(\'es\'))", vars.get("navigatorLanguage"))) 
+//    		  assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
+//    	  else
+//    		  assertEquals(vars.get("message").toString(), "Please enter an email address.");
     }
     // 22 | click | id=header-account-menu-link | 
     driver.findElement(By.id("header-account-menu-link")).click();
