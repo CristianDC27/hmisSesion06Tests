@@ -80,6 +80,7 @@ public class S6CambioInfoFailsTest {
   public void s6CambioInfoFails() {
     // Test name: S6CambioInfoFails
     // Step # | name | target | value
+	  vars.put("navigatorLanguage", js.executeScript("return navigator.language"));
     // 1 | open | https://hmis06.azurewebsites.net/ | 
     driver.get("https://hmis06.azurewebsites.net/");
     // 2 | setWindowSize | 945x1020 | 
@@ -139,8 +140,12 @@ public class S6CambioInfoFailsTest {
     // 17 | assert | message | Incluye un signo "@" en la dirección de correo electrónico. La dirección "ej1" no incluye el signo "@".
     if(browser==1)
     	assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
-    else 
-    	assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
+    else {
+    	  if ((Boolean) js.executeScript("return (arguments[0].includes(\'es\'))", vars.get("navigatorLanguage"))) 
+    		  assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
+    	  else
+    		  assertEquals(vars.get("message").toString(), "Please enter an email address.");
+    }
     // 18 | type | id=email-address | ej1@
     driver.findElement(By.id("email-address")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
     driver.findElement(By.id("email-address")).sendKeys("ej1@");
@@ -151,8 +156,12 @@ public class S6CambioInfoFailsTest {
     // 21 | assert | message | Introduce texto detrás del signo "@". La dirección "ej1@" está incompleta.
     if(browser==1)
     	assertEquals(vars.get("message").toString(), "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \"ej1\" no incluye el signo \"@\".");
-    else 
-    	assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
+    else {
+    	  if ((Boolean) js.executeScript("return (arguments[0].includes(\'es\'))", vars.get("navigatorLanguage"))) 
+    		  assertEquals(vars.get("message").toString(), "Introduzca una dirección de correo.");
+    	  else
+    		  assertEquals(vars.get("message").toString(), "Please enter an email address.");
+    }
     // 22 | click | id=header-account-menu-link | 
     driver.findElement(By.id("header-account-menu-link")).click();
     // 23 | waitForElementVisible | linkText=Sign out | 30000
