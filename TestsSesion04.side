@@ -1,0 +1,576 @@
+{
+  "id": "1a15bad4-5525-4d76-8d64-461ee11dc4d1",
+  "version": "2.0",
+  "name": "TestsSesion04",
+  "url": "https://hmis20-cc002.azurewebsites.net",
+  "tests": [{
+    "id": "4d41e05a-5dc2-4802-b134-b121dbd05400",
+    "name": "S4_NombreDescLinks",
+    "commands": [{
+      "id": "2e09dc9c-6463-4d6c-a0ea-3d4822bbfe73",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d33788be-0e5c-426c-a190-ed1a848d44a6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8939300e-e736-4ff2-b7d9-c5cbf701b5f7",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Equipo 3",
+      "targets": [
+        ["linkText=Equipo 3", "linkText"],
+        ["css=.navbar-brand", "css:finder"],
+        ["xpath=//a[contains(text(),'Equipo 3')]", "xpath:link"],
+        ["xpath=//nav[@id='tmNav']/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#hero')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Equipo 3')]", "xpath:innerText"]
+      ],
+      "value": "Equipo 3"
+    }, {
+      "id": "76256772-b023-4566-bc38-d0d5b1e63f21",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-caret-down",
+      "targets": [
+        ["css=.fa-caret-down", "css:finder"],
+        ["xpath=//section[@id='hero']/div[2]/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b05c76cf-cdba-4f2b-9203-c95f39bdd6ff",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-lg-12 .mx-auto",
+      "targets": [
+        ["css=.col-lg-12 .mx-auto", "css:finder"],
+        ["xpath=//section[@id='introduction']/div/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div/div/div/p", "xpath:position"]
+      ],
+      "value": "Esto es una web realizada para la Sesion 4 a modo de ejemplo, para trabajar en equipo con Github. Realizada el Grupo 3 formado por Ángel Gómez Espinosa (responsable) y Cristian David Casado (desarrollador)."
+    }, {
+      "id": "e153fce8-c86a-4ffd-b8af-fd7173b74616",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Enlaces",
+      "targets": [
+        ["linkText=Enlaces", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Enlaces')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#work')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Enlaces')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4dbda97c-9f6e-4a2a-aaef-6986ef972078",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row > .text-center > .mx-auto",
+      "targets": [
+        ["css=.row > .text-center > .mx-auto", "css:finder"],
+        ["xpath=//section[@id='work']/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div/div/p", "xpath:position"]
+      ],
+      "value": "- Página personal de Ángel Gómez Espinosa\\n- Página personal de Cristian David Casado\\n- GitHub repositorio de este proyecto\\n- GitHub fork de este proyecto\\n- GitHub official documentation\\n‐ HMIS organization on GitHub\\n‐ Git book\\n‐ Azure portal\\n‐ Azure official documentation"
+    }]
+  }, {
+    "id": "64d6097d-c001-4ed1-abfb-9416d72de8be",
+    "name": "S4_PagPersonalCris",
+    "commands": [{
+      "id": "98c8db4b-dc65-4878-8025-2d1dd65797dc",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7b5d77a-1bf5-4ff8-96d9-1b8c6296a6c2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "166dad5c-4683-4398-8af0-412d75806c42",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-caret-down",
+      "targets": [
+        ["css=.fa-caret-down", "css:finder"],
+        ["xpath=//section[@id='hero']/div[2]/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8cc5e33-1801-4eeb-8106-169403149c6e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cristian David Casado",
+      "targets": [
+        ["linkText=Cristian David Casado", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Cristian David Casado')]", "xpath:link"],
+        ["xpath=//section[@id='introduction']/div/div/div/div/p/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'cristian.html')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Cristian David Casado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cddc35f-5ec9-4931-860b-224ae65b54f0",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Cristian",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f922375-d763-4c6f-b981-03070a5cda0b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.tm-hero-subtitle",
+      "targets": [
+        ["css=.tm-hero-subtitle", "css:finder"],
+        ["xpath=//section[@id='hero']/div/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Cristian David Casado\\nDesarrollador"
+    }, {
+      "id": "c627e988-cb0d-4efd-bbdd-3c7fff5711d8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-caret-down",
+      "targets": [
+        ["css=.fa-caret-down", "css:finder"],
+        ["xpath=//section[@id='hero']/div[2]/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb7917c1-9b6a-4ee3-b384-e1199619b016",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.tm-intro-img",
+      "targets": [
+        ["css=.tm-intro-img", "css:finder"],
+        ["xpath=//img[@alt='Image']", "xpath:img"],
+        ["xpath=//section[@id='introduction']/div/div/div/center/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f370b4ff-a5a2-49ab-b0b1-7bbe568acad2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-4:nth-child(2)",
+      "targets": [
+        ["css=.mb-4:nth-child(2)", "css:finder"],
+        ["xpath=//section[@id='introduction']/div/div/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Cristian David Casado, estudiante de la Universidad de Almería, cursando actualmente la asignatura de Herramientas y Métodos de Ingeniería del Software.')]", "xpath:innerText"]
+      ],
+      "value": "Cristian David Casado, estudiante de la Universidad de Almería, cursando actualmente la asignatura de Herramientas y Métodos de Ingeniería del Software."
+    }, {
+      "id": "d1006480-2a69-4e51-8bed-9faec7805866",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide00 i",
+      "targets": [
+        ["css=#slick-slide00 i", "css:finder"],
+        ["xpath=//a[@id='slick-slide00']/figure/figcaption/h2/i", "xpath:idRelative"],
+        ["xpath=//h2/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59ccf4f6-7231-4fe9-9345-915b1d9350a0",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide01 h2",
+      "targets": [
+        ["css=#slick-slide01 h2", "css:finder"],
+        ["xpath=//a[@id='slick-slide01']/figure/figcaption/h2", "xpath:idRelative"],
+        ["xpath=//a[2]/figure/figcaption/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1610bf6f-3078-45f3-b822-6b16d0c436eb",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide02 h2",
+      "targets": [
+        ["css=#slick-slide02 h2", "css:finder"],
+        ["xpath=//a[@id='slick-slide02']/figure/figcaption/h2", "xpath:idRelative"],
+        ["xpath=//a[3]/figure/figcaption/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e16b66a-3a98-4e61-afaa-1865d10fc386",
+      "comment": "",
+      "command": "click",
+      "target": "id=slick-slide-control01",
+      "targets": [
+        ["id=slick-slide-control01", "id"],
+        ["css=#slick-slide-control01", "css:finder"],
+        ["xpath=//button[@id='slick-slide-control01']", "xpath:attributes"],
+        ["xpath=//section[@id='work']/div/div[2]/div/div/div/ul/li[2]/button", "xpath:idRelative"],
+        ["xpath=//li[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f45700cd-d773-423e-b33e-1763dc271217",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide03 figcaption",
+      "targets": [
+        ["css=#slick-slide03 figcaption", "css:finder"],
+        ["xpath=//a[@id='slick-slide03']/figure/figcaption", "xpath:idRelative"],
+        ["xpath=//a[4]/figure/figcaption", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2567b74a-fb60-405b-964c-9f5ef78d0576",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide04 i",
+      "targets": [
+        ["css=#slick-slide04 i", "css:finder"],
+        ["xpath=//a[@id='slick-slide04']/figure/figcaption/h2/i", "xpath:idRelative"],
+        ["xpath=//a[5]/figure/figcaption/h2/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42464620-66cd-4905-ac56-d4e759633161",
+      "comment": "",
+      "command": "click",
+      "target": "id=slick-slide-control03",
+      "targets": [
+        ["id=slick-slide-control03", "id"],
+        ["css=#slick-slide-control03", "css:finder"],
+        ["xpath=//button[@id='slick-slide-control03']", "xpath:attributes"],
+        ["xpath=//section[@id='work']/div/div[2]/div/div/div/ul/li[4]/button", "xpath:idRelative"],
+        ["xpath=//li[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'4')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6498642-e464-42ce-80a0-31902320f558",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide05 h2",
+      "targets": [
+        ["css=#slick-slide05 h2", "css:finder"],
+        ["xpath=//a[@id='slick-slide05']/figure/figcaption/h2", "xpath:idRelative"],
+        ["xpath=//a[6]/figure/figcaption/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "614e85c8-3b24-4fae-a9e8-986bed2e2ed2",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide06 span",
+      "targets": [
+        ["css=#slick-slide06 span", "css:finder"],
+        ["xpath=//a[@id='slick-slide06']/figure/figcaption/h2/i/span", "xpath:idRelative"],
+        ["xpath=//a[7]/figure/figcaption/h2/i/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "94cbbc36-e8c6-4cd8-a076-d0a84589f02b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide07 span",
+      "targets": [
+        ["css=#slick-slide07 span", "css:finder"],
+        ["xpath=//a[@id='slick-slide07']/figure/figcaption/h2/i/span", "xpath:idRelative"],
+        ["xpath=//a[8]/figure/figcaption/h2/i/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e53ef337-4aab-4701-93e2-6b13be74d084",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Cristian David Casado",
+      "targets": [
+        ["linkText=Cristian David Casado", "linkText"],
+        ["css=.col-sm-12:nth-child(3) > .tm-contact-item-link", "css:finder"],
+        ["xpath=//section[@id='contact']/div/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://github.com/CristianDC27')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cristian David Casado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "13bd99e8-fe25-4ba6-b30a-61ae73b9ebe9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Leer más",
+      "targets": [
+        ["linkText=Leer más", "linkText"],
+        ["css=.tm-btn-primary", "css:finder"],
+        ["xpath=//a[contains(text(),'Leer más')]", "xpath:link"],
+        ["xpath=//section[@id='introduction']/div/div/div[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#work')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Leer más')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "36c16a90-25b9-4690-84d5-f827ac5684a2",
+    "name": "S4_PagPersonalAng",
+    "commands": [{
+      "id": "35d22dd0-d961-4ab5-ad0a-076928256c65",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbf4d40a-ab37-4ded-a63d-5760442c6570",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d4af173d-5bea-4a9b-b052-4a6fa4949634",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-caret-down",
+      "targets": [
+        ["css=.fa-caret-down", "css:finder"],
+        ["xpath=//section[@id='hero']/div[2]/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d27d99a2-0909-4db2-be09-7127b7f63587",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ángel Gómez Espinosa",
+      "targets": [
+        ["linkText=Ángel Gómez Espinosa", "linkText"],
+        ["css=.col-lg-12 a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Ángel Gómez Espinosa')]", "xpath:link"],
+        ["xpath=//section[@id='introduction']/div/div/div/div/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'angel.html')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ángel Gómez Espinosa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35bb1403-9a29-48c6-b608-5a023cf958d7",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Ángel Gómez Espinosa",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd2e7933-cd25-4c14-b613-2bf0f1abfe21",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.tm-hero-subtitle",
+      "targets": [
+        ["css=.tm-hero-subtitle", "css:finder"],
+        ["xpath=//section[@id='hero']/div/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "Ángel Gómez Espinosa\\nResponsable"
+    }, {
+      "id": "b0172d9e-b1e1-4324-b08f-91ea9c5c032a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-caret-down",
+      "targets": [
+        ["css=.fa-caret-down", "css:finder"],
+        ["xpath=//section[@id='hero']/div[2]/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1019f6b-968d-4684-8915-d49ff87fcdd5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.tm-intro-img",
+      "targets": [
+        ["css=.tm-intro-img", "css:finder"],
+        ["xpath=//img[@alt='Image']", "xpath:img"],
+        ["xpath=//section[@id='introduction']/div/div/div/center/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd8c57bb-7ee0-48b9-abae-828a037e40eb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-4:nth-child(2)",
+      "targets": [
+        ["css=.mb-4:nth-child(2)", "css:finder"],
+        ["xpath=//section[@id='introduction']/div/div/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"]
+      ],
+      "value": "!Hola!, me presento soy Ángel Gómez, estudiante de la Universidad de Almería, cursando actualmente la carrera de Ingeniería informática, con mención en ingenería del software."
+    }, {
+      "id": "92dac6a2-b5ee-4e77-b9af-fd3d04b7bf8a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide00 i",
+      "targets": [
+        ["css=#slick-slide00 i", "css:finder"],
+        ["xpath=//a[@id='slick-slide00']/figure/figcaption/h2/i", "xpath:idRelative"],
+        ["xpath=//h2/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ef5efa3-bb0e-4a3f-91ed-5b1bdda46c46",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide01 i",
+      "targets": [
+        ["css=#slick-slide01 i", "css:finder"],
+        ["xpath=//a[@id='slick-slide01']/figure/figcaption/h2/i", "xpath:idRelative"],
+        ["xpath=//a[2]/figure/figcaption/h2/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90265a9d-4757-49a4-97b9-009d6c27be92",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide02 span",
+      "targets": [
+        ["css=#slick-slide02 span", "css:finder"],
+        ["xpath=//a[@id='slick-slide02']/figure/figcaption/h2/i/span", "xpath:idRelative"],
+        ["xpath=//a[3]/figure/figcaption/h2/i/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20bfccb6-58b8-4bff-a805-cbeac55efb0d",
+      "comment": "",
+      "command": "click",
+      "target": "id=slick-slide-control02",
+      "targets": [
+        ["id=slick-slide-control02", "id"],
+        ["css=#slick-slide-control02", "css:finder"],
+        ["xpath=//button[@id='slick-slide-control02']", "xpath:attributes"],
+        ["xpath=//section[@id='work']/div/div[2]/div/div/div/ul/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "37ab80e7-ab93-4a4b-8fef-ed59f8223005",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide04 h2",
+      "targets": [
+        ["css=#slick-slide04 h2", "css:finder"],
+        ["xpath=//a[@id='slick-slide04']/figure/figcaption/h2", "xpath:idRelative"],
+        ["xpath=//a[5]/figure/figcaption/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4950ae23-1e48-4a07-9b9e-c614bc458ae8",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide05 span",
+      "targets": [
+        ["css=#slick-slide05 span", "css:finder"],
+        ["xpath=//a[@id='slick-slide05']/figure/figcaption/h2/i/span", "xpath:idRelative"],
+        ["xpath=//a[6]/figure/figcaption/h2/i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'JUST G2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "84b10a69-26e0-4a33-aa73-48778da0f1e2",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide06 h2",
+      "targets": [
+        ["css=#slick-slide06 h2", "css:finder"],
+        ["xpath=//a[@id='slick-slide06']/figure/figcaption/h2", "xpath:idRelative"],
+        ["xpath=//a[7]/figure/figcaption/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30f37cdf-47fc-43e4-bede-cd869df0d70e",
+      "comment": "",
+      "command": "click",
+      "target": "id=slick-slide-control03",
+      "targets": [
+        ["id=slick-slide-control03", "id"],
+        ["css=#slick-slide-control03", "css:finder"],
+        ["xpath=//button[@id='slick-slide-control03']", "xpath:attributes"],
+        ["xpath=//section[@id='work']/div/div[2]/div/div/div/ul/li[4]/button", "xpath:idRelative"],
+        ["xpath=//li[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'4')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fb89e8b-ad4c-4269-8afc-43126ffef61f",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=#slick-slide07 span",
+      "targets": [
+        ["css=#slick-slide07 span", "css:finder"],
+        ["xpath=//a[@id='slick-slide07']/figure/figcaption/h2/i/span", "xpath:idRelative"],
+        ["xpath=//a[8]/figure/figcaption/h2/i/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4acceda2-1ddb-4803-bbeb-2a40f1ed9fe6",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=#slick-slide07 h2",
+      "targets": [
+        ["css=#slick-slide07 h2", "css:finder"],
+        ["xpath=//a[@id='slick-slide07']/figure/figcaption/h2", "xpath:idRelative"],
+        ["xpath=//a[8]/figure/figcaption/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f92d0621-89bd-461a-a50b-8cbdc7f3391f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#slick-slide07 h2",
+      "targets": [
+        ["css=#slick-slide07 h2", "css:finder"],
+        ["xpath=//a[@id='slick-slide07']/figure/figcaption/h2", "xpath:idRelative"],
+        ["xpath=//a[8]/figure/figcaption/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5ded148-85e2-4068-a697-61ad7b4b6c74",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.mb-0",
+      "targets": [
+        ["css=.mb-0", "css:finder"],
+        ["xpath=//section[@id='contact']/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Ángel Gómez Espinosa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4a1b3827-aa62-4d9a-91a6-ab32ce582fa4",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4d41e05a-5dc2-4802-b134-b121dbd05400"]
+  }],
+  "urls": ["https://hmis20-cc002.azurewebsites.net/"],
+  "plugins": []
+}
